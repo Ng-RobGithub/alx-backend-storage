@@ -1,8 +1,6 @@
---This SQL query lists all bands with "Glam rock" as their main style, ranked by their longevity.
---It calculates the lifespan of each band by subtracting the year the band formed from the year the band split, or from the current year if the band is still active.
---The results are ordered in descending order based on the lifespan.
+-- This SQL script lists all bands with Glam rock as their main style, ranked by their longevity.
 
-SELECT band_name, YEAR(CURDATE()) - formed AS lifespan
-FROM metal_bands
-WHERE main_style = 'Glam rock'
+SELECT band_name, (YEAR('2022-01-01') - formed) AS lifespan
+FROM bands
+WHERE split LIKE '%Glam rock%'
 ORDER BY lifespan DESC;
