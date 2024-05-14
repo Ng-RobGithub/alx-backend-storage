@@ -10,9 +10,10 @@
             "port": 3306,
             "driver": "MySQL",
             "name": "NgRobSql",
-            "database": "NgDB",
-            "username": "admin",
-            "password": "Ngorob123"
+            "database": "MYSQL",
+            "username": "root",
+            "password": "Ngorobago1?",
+            "connectionTimeout": 30
         }
     ]
 }
