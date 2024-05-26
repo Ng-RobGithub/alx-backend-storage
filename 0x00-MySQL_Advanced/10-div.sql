@@ -6,17 +6,12 @@
 -- Date: [26/05/2024]
 -- Version: 1.0
 
-DELIMITER //
-
+DELIMITER $$
 DROP FUNCTION IF EXISTS SafeDiv;
-CREATE FUNNCTION SafeDiv(a INT, b INT)
-RETURNS DECIMAL(10,4)
+CREATE FUNCTION SafeDiv(a INT, b INT)
+RETURNS FLOAT
 BEGIN
-    IF b = 0 THEN
-        RETURN 0;
-    ELSE
-        RETURN a / b;
-    END IF;
-END //
-
+    RETURN (IF (b = 0, 0, a / b));
+END
+$$
 DELIMITER ;
