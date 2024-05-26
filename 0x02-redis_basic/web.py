@@ -6,6 +6,7 @@ import requests
 from functools import wraps
 from typing import Callable
 
+
 redis_store = redis.Redis()
 '''The module-level Redis instance.
 '''
