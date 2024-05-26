@@ -5,4 +5,4 @@
 -- Date: [Current Date]
 -- Version: 1.0
 
-CREATE INDEX idx_name_first ON names (SUBSTRING(name, 1, 1));
+CREATE INDEX idx_name_first ON names(name(1));
