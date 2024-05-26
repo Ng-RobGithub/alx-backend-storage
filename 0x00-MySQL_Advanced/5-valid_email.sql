@@ -1,17 +1,16 @@
---This SQL script creates a trigger that resets the attribute valid_email
---only when the email has been changed.
---@author: Ngozi Rob Agomuonso <https://github.com/Ng-RobGithub>
+-- This SQL script creates a trigger that resets the attribute valid_email
+-- only when the email has been changed
 
-DROP TRIGGER IF EXISTS validate_email;
-DELIMITER $$
-CREATE TRIGGER validate_email
+
+CREATE TRIGGER reset_valid_email
 BEFORE UPDATE ON users
 FOR EACH ROW
 BEGIN
-    IF OLD.email != NEW.email THEN
+    -- Trigger logic here
+    IF NEW.email IS NULL THEN
         SET NEW.valid_email = 0;
     ELSE
-        SET NEW.valid_email = NEW.valid_email;
+        SET NEW.valid_email = 1;
     END IF;
-END $$
-DELIMITER ;
+END;
+
