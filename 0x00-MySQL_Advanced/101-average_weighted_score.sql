@@ -1,7 +1,7 @@
 -- Create a stored procedure named ComputeAverageWeightedScoreForUsers
 -- that computes and stores the average weighted score for all students
 
-DROPPROCEDURE IF EXISTS ComputerAverageWeightedScoreForUsers;
+DROP PROCEDURE IF EXISTS ComputeAverageWeightedScoreForUsers;
 DELIMITER //
 
 CREATE PROCEDURE ComputeAverageWeightedScoreForUsers()
